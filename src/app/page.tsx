@@ -4,7 +4,7 @@ import Selector from "@/components/Selector";
 
 export default function Home() {
   return (
-    <div className="flex h-full bg-amber-600">
+    <div className="flex h-dvh ">
       <GameDetails></GameDetails>
       <Selector></Selector>
       <InfoDisplayer></InfoDisplayer>
