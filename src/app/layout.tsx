@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Raleway } from "next/font/google";
+import { JetBrains_Mono, Raleway, Inter } from "next/font/google";
 import "./globals.css";
 
 const raleway = Raleway({
@@ -9,6 +9,10 @@ const raleway = Raleway({
 
 const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+});
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -22,7 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
-      className={`${raleway.variable} ${jetBrainsMono.variable} h-full antialiased`}
+      className={`${raleway.variable} ${jetBrainsMono.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
