@@ -1,76 +1,67 @@
-import { BowArrow, CircleQuestionMark, House, LayoutGrid } from "lucide-react";
+"use client";
+
+import { CircleQuestionMark, House, LayoutGrid } from "lucide-react";
+import { usePathname } from "next/navigation";
 import NavLink from "./NavLink";
 import IntegranteItem from "./IntegranteItem";
 
-const GameDetails = () => {
-  return (
-    <div className="flex flex-12 flex-col gap-10 h-[100% - 16px] bg-[#1A1C20] border border-marine-800 p-6">
-      {/* logo */}
-      <div className="flex h-max pb-2">
-        {/* image */}
-        <div className="w-15 bg-gray-600 mr-2 rounded-full"></div>
-        <div className="flex flex-col p-2 gap-1.5 h-15 font-sans">
-          <h1 className="text-sm font-bold text-white">Nome aqui</h1>
-          <h2 className="text-xs text-white/60">Informações sobre jogos</h2>
-        </div>
-      </div>
-      {/* separator */}
-      <div className="bg-marine-800 h-px -m-6 w-[100% + 24px] " />
+const navItems = [
+  { key: "inicio", label: "Início", href: "/", icon: House },
+  { key: "painel", label: "Painel", href: "/painel", icon: LayoutGrid },
+  { key: "sobre", label: "Sobre", href: "/sobre", icon: CircleQuestionMark },
+];
 
-      <div className="flex flex-col justify-between h-full">
-        {/* Navigation */}
-        <div className="flex flex-col h-max gap-4">
-          <h2 className="text-xs uppercase font-light text-white/40 tracking-widest font-inter">
-            Navegação
+const GameDetails = () => {
+  const pathname = usePathname();
+  const activeTab =
+    pathname === "/painel"
+      ? "painel"
+      : pathname === "/sobre"
+        ? "sobre"
+        : "inicio";
+
+  return (
+    <aside className="flex h-full w-[240px] flex-col gap-6 bg-[#1A1C20] p-4 text-white">
+      <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+        <div className="h-9 w-9 rounded-full bg-gray-600" />
+        <div className="min-w-0">
+          <h1 className="truncate text-sm font-semibold text-white">
+            Nome aqui
+          </h1>
+          <h2 className="truncate text-[11px] text-white/50">
+            Informações sobre jogos
           </h2>
-          <div className="flex flex-col gap-1">
-            <NavLink isActive={true}>
-              <LayoutGrid width={18} height={18} />
-              Painel
-            </NavLink>
-            <NavLink isActive={false}>
-              <CircleQuestionMark width={18} height={18} />
-              Sobre
-            </NavLink>
-            <NavLink isActive={false}>
-              <House width={18} height={18} />
-              Início
-            </NavLink>
-          </div>
-          <h2 className="text-xs uppercase font-light text-white/40 tracking-widest font-inter">
-            Categorias
-          </h2>
-          <div className="flex flex-col gap-1">
-            <NavLink isActive={false}>
-              <BowArrow width={18} height={18} />
-              FPS
-            </NavLink>
-            <NavLink isActive={false}>
-              <CircleQuestionMark width={18} height={18} />
-              BATTLE ROYALE
-            </NavLink>
-            <NavLink isActive={false}>
-              <House width={18} height={18} />
-              MOBA
-            </NavLink>
-          </div>
-        </div>
-        {/* Other content */}
-        <div className="flex flex-col gap-3 ">
-          <h2 className="text-xs uppercase font-light text-white/40 tracking-widest font-inter">
-            Integrantes
-          </h2>
-          <div className="flex flex-col gap-1.5">
-            <IntegranteItem integrante="Alexandre P." number="1" />
-            <IntegranteItem integrante="João Vitor A." number="2" />
-            <IntegranteItem integrante="João Gabriel R." number="3" />
-            <IntegranteItem integrante="Lucas M." number="4" />
-            <IntegranteItem integrante="Rafael C." number="5" />
-            <IntegranteItem integrante="Victor K." number="6" />
-          </div>
         </div>
       </div>
-    </div>
+
+      <div className="flex flex-col gap-3">
+        <h2 className="px-2 text-[10px] font-medium uppercase tracking-[0.18em] text-white/35">
+          Navegação
+        </h2>
+        <div className="flex flex-col gap-1">
+          {navItems.map(({ key, label, href, icon: Icon }) => (
+            <NavLink key={key} href={href} isActive={activeTab === key}>
+              <Icon width={16} height={16} />
+              {label}
+            </NavLink>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex flex-1 flex-col gap-3 pt-2">
+        <h2 className="px-2 text-[10px] font-medium uppercase tracking-[0.18em] text-white/35">
+          Integrantes do Grupo
+        </h2>
+        <div className="flex flex-col gap-0.5">
+          <IntegranteItem integrante="Alexandre P." number="1" />
+          <IntegranteItem integrante="João Vitor A." number="2" />
+          <IntegranteItem integrante="João Gabriel R." number="3" />
+          <IntegranteItem integrante="Lucas M." number="4" />
+          <IntegranteItem integrante="Rafael C." number="5" />
+          <IntegranteItem integrante="Victor K." number="6" />
+        </div>
+      </div>
+    </aside>
   );
 };
 
