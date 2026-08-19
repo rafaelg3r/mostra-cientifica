@@ -6,7 +6,9 @@ import Selector, { games } from "@/components/Selector";
 import { useState } from "react";
 
 export default function PainelPage() {
-  const [selectedGame, setSelectedGame] = useState(games[0]);
+  const [selectedGame, setSelectedGame] = useState<
+    (typeof games)[number] | undefined
+  >();
 
   return (
     <div className="flex h-dvh min-h-0 overflow-hidden max-[1024px]:flex-col max-[1024px]:overflow-y-auto max-[1024px]:bg-[#101214]">

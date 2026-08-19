@@ -1,7 +1,7 @@
-import type { GameData } from "./Selector";
+import { gameImages, type GameData } from "./Selector";
 
 type InfoDisplayerProps = {
-  game: GameData;
+  game?: GameData;
 };
 
 const InfoDisplayer = ({ game }: InfoDisplayerProps) => {
@@ -13,68 +13,92 @@ const InfoDisplayer = ({ game }: InfoDisplayerProps) => {
         </p>
       </div>
 
-      <div className="mt-4 rounded-2xl border border-white/10 bg-[#1d1f22] p-3 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
-        <div className="flex items-center gap-3">
-          <div
-            className={`h-10 w-10 rounded-xl bg-linear-to-br ${game.accent} shadow-inner shadow-black/20`}
-          />
-          <div className="min-w-0">
-            <p className="text-[10px] uppercase tracking-[0.18em] text-[#949ba4]">
-              Projeto
+      {!game ? (
+        <div className="flex flex-1 items-center justify-center">
+          <div className="max-w-xs rounded-2xl border border-dashed border-white/15 bg-[#1d1f22] p-6 text-center">
+            <p className="text-sm font-semibold text-white">
+              Selecione um jogo
             </p>
-            <h2 className="mt-1 truncate text-lg font-semibold text-white">
-              {game.name}
-            </h2>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-4 space-y-3">
-        <div className="rounded-xl border border-white/10 bg-[#1f2125] p-3 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#949ba4]">
-            Descrição
-          </p>
-          <p className="mt-2 text-sm leading-6 text-[#dfe4ea]/85">
-            {game.description}
-          </p>
-        </div>
-
-        <div className="space-y-2 rounded-xl border border-white/10 bg-[#1f2125] p-3 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
-          <div className="rounded-lg bg-[#2b2d31] p-2.5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#949ba4]">
-              Jogadores mensais
-            </p>
-            <p className="mt-1 text-sm font-medium text-white">
-              {game.players}
-            </p>
-          </div>
-
-          <div className="rounded-lg bg-[#2b2d31] p-2.5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#949ba4]">
-              Casos mais comuns
-            </p>
-            <p className="mt-1 text-sm font-medium text-white">
-              {game.prejudice}
-            </p>
-          </div>
-
-          <div className="rounded-lg bg-[#2b2d31] p-2.5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#949ba4]">
-              Estatísticas importantes
-            </p>
-            <p className="mt-1 text-sm font-medium text-white">{game.stats}</p>
-          </div>
-
-          <div className="rounded-lg bg-[#2b2d31] p-2.5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#949ba4]">
-              Observações
-            </p>
-            <p className="mt-1 text-sm font-medium text-white">
-              {game.observations}
+            <p className="mt-2 text-sm leading-6 text-[#949ba4]">
+              Escolha um dos jogos no painel para ver suas informações.
             </p>
           </div>
         </div>
-      </div>
+      ) : (
+        <>
+          <div className="mt-4 rounded-2xl border border-white/10 bg-[#1d1f22] p-3 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
+            <div className="flex items-center gap-3">
+              <div
+                className={`h-10 w-10 rounded-xl bg-linear-to-br ${game.accent} shadow-inner shadow-black/20`}
+                style={{
+                  backgroundImage: gameImages[game.name]
+                    ? `url("${gameImages[game.name]}")`
+                    : undefined,
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+              />
+              <div className="min-w-0">
+                <p className="text-[10px] uppercase tracking-[0.18em] text-[#949ba4]">
+                  Jogo
+                </p>
+                <h2 className="mt-1 truncate text-lg font-semibold text-white">
+                  {game.name}
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-4 space-y-3">
+            <div className="rounded-xl border border-white/10 bg-[#1f2125] p-3 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#949ba4]">
+                Descrição
+              </p>
+              <p className="mt-2 text-sm leading-6 text-[#dfe4ea]/85">
+                {game.description}
+              </p>
+            </div>
+
+            <div className="space-y-2 rounded-xl border border-white/10 bg-[#1f2125] p-3 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
+              <div className="rounded-lg bg-[#2b2d31] p-2.5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#949ba4]">
+                  Jogadores mensais
+                </p>
+                <p className="mt-1 text-sm font-medium text-white">
+                  {game.players}
+                </p>
+              </div>
+
+              <div className="rounded-lg bg-[#2b2d31] p-2.5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#949ba4]">
+                  Casos mais comuns
+                </p>
+                <p className="mt-1 text-sm font-medium text-white">
+                  {game.prejudice}
+                </p>
+              </div>
+
+              <div className="rounded-lg bg-[#2b2d31] p-2.5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#949ba4]">
+                  Estatísticas importantes
+                </p>
+                <p className="mt-1 text-sm font-medium text-white">
+                  {game.stats}
+                </p>
+              </div>
+
+              <div className="rounded-lg bg-[#2b2d31] p-2.5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#949ba4]">
+                  Observações
+                </p>
+                <p className="mt-1 text-sm font-medium text-white">
+                  {game.observations}
+                </p>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </aside>
   );
 };

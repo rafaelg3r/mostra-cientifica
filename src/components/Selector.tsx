@@ -23,10 +23,11 @@ export const games: GameData[] = [
     category: "Plataforma social",
     year: "2025",
     technology: "Lua / Roblox Studio",
-    status: "~380,1M MAU",
+    status: "~380,1M Usuários/mensais",
     description:
-      "A Roblox registrou cerca de 380,1 milhões de MAU em 2025 e também 144 milhões de DAU no Q4. Foram documentados casos de racismo, antissemitismo e discurso de ódio em experiências da plataforma.",
-    players: "~380,1 milhões de MAU; ~144 milhões de DAU no Q4/2025",
+      "O Roblox registrou cerca de 380,1 milhões de Usuários Mensais em 2025 e também 144 milhões de Usuários diários no quarto trimestre. Foram documentados casos de racismo, antissemitismo e discurso de ódio em experiências da plataforma.",
+    players:
+      "~380,1 milhões de Usuários Mensais; ~144 milhões de Usuários diários no 4º Trimestre/2025",
     prejudice: "Racismo, antissemitismo e discurso de ódio",
     stats:
       "A CBS encontrou dezenas de suásticas e insultos raciais/antissemitas em Spray Paint!",
@@ -39,10 +40,11 @@ export const games: GameData[] = [
     category: "Battle Royale",
     year: "2025",
     technology: "Unreal Engine",
-    status: "~110M MAU",
+    status: "~110 milhões de Usuários Mensais",
     description:
-      "A Epic chegou a aproximadamente 110 milhões de MAU em 2025, com picos de jogadores simultâneos em 2026. Há registros de racismo, homofobia e linguagem discriminatória em comunidade e transmissões.",
-    players: "~110 milhões de MAU; ~575 mil jogadores simultâneos em 2026",
+      "A Epic chegou a aproximadamente 110 milhões de Usuários Mensais em 2025, com picos de jogadores simultâneos em 2026. Há registros de racismo, homofobia e linguagem discriminatória em comunidades e transmissões.",
+    players:
+      "~110 milhões de Usuários Mensais; ~575 mil jogadores simultâneos em 2026",
     prejudice: "Racismo, homofobia e discriminação em geral",
     stats:
       "FaZe Dubs foi afastado após uso de termo racial pejorativo; criador foi suspenso por comentário homofóbico.",
@@ -55,10 +57,10 @@ export const games: GameData[] = [
     category: "Sandbox",
     year: "2025",
     technology: "Java / Bedrock",
-    status: "~212M MAU",
+    status: "~212 milhões de Usuários Mensais",
     description:
-      "O jogo atingiu cerca de 212 milhões de MAU em 2025. Estudos apontaram racismo, supremacia branca, sexismo e linguagem ofensiva em chats públicos de servidores Java.",
-    players: "~212 milhões de MAU",
+      "O jogo atingiu cerca de 212 milhões de Usuários Mensais em 2025. Estudos apontaram racismo, supremacia branca, sexismo e linguagem ofensiva em chats públicos de servidores Java.",
+    players: "~212 milhões de Usuários Mensais",
     prejudice:
       "Racismo, supremacia branca, sexismo e linguagem sexual/ofensiva",
     stats:
@@ -72,10 +74,11 @@ export const games: GameData[] = [
     category: "FPS competitivo",
     year: "2026",
     technology: "Source Engine",
-    status: "1,17M simultâneos",
+    status: "1,17 milhão de jogadores simultâneos",
     description:
       "Counter-Strike 2 registrou cerca de 1,17 milhão de jogadores simultâneos em fevereiro de 2026. A comunidade tem histórico de racismo, homofobia, xenofobia e sexismo, especialmente em chats.",
-    players: "~1,17 milhão de jogadores simultâneos; pico histórico ~1,86M",
+    players:
+      "~1,17 milhão de jogadores simultâneos; pico histórico de ~1,86 milhão",
     prejudice: "Racismo, homofobia, xenofobia e sexismo",
     stats:
       "O jogador profissional BOROS foi banido após insultos raciais contra um jogador chinês.",
@@ -88,10 +91,10 @@ export const games: GameData[] = [
     category: "MOBA",
     year: "2025",
     technology: "Unreal Engine",
-    status: "~150M MAU",
+    status: "~150 milhões de Usuários Mensais",
     description:
-      "O jogo é estimado em cerca de 150 milhões de MAU. Há registros de racismo, sexismo, homofobia e assédio, com estudos apontando que cerca de 36% dos jogadores relatam assédio frequente.",
-    players: "~150 milhões de MAU (estimativa)",
+      "O jogo é estimado em cerca de 150 milhões de Usuários Mensais. Há registros de racismo, sexismo, homofobia e assédio, com estudos apontando que cerca de 36% dos jogadores relatam assédio frequente.",
+    players: "~150 milhões de Usuários Mensais (estimativa)",
     prejudice: "Racismo, sexismo, homofobia e assédio",
     stats: "Aproximadamente 36% dos jogadores relatam assédio frequente.",
     observations:
@@ -103,10 +106,11 @@ export const games: GameData[] = [
     category: "FPS tático",
     year: "2026",
     technology: "Unreal Engine",
-    status: "18–21M MAU",
+    status: "18–21 milhões de Usuários Mensais",
     description:
-      "A Riot estimou mais de 35 milhões de jogadores mensais em 2024; em 2026, o jogo ficou em faixa de 18 a 21 milhões de MAU. Há casos documentados de racismo, homofobia e sexismo.",
-    players: "~18–21 milhões de MAU em 2026; 35M mensais em 2024",
+      "A Riot estimou mais de 35 milhões de jogadores mensais em 2024; em 2026, o jogo ficou na faixa de 18 a 21 milhões de Usuários Mensais. Há casos documentados de racismo, homofobia e sexismo.",
+    players:
+      "~18–21 milhões de Usuários Mensais em 2026; mais de 35 milhões em 2024",
     prejudice: "Racismo, homofobia e sexismo",
     stats:
       "Jogadores e streamers foram punidos por termos racistas e comentários discriminatórios.",
@@ -119,10 +123,11 @@ export const games: GameData[] = [
     category: "Battle Royale",
     year: "2026",
     technology: "Source / Unreal",
-    status: "20–22M MAU",
+    status: "20–22 milhões de Usuários Mensais",
     description:
-      "Apex apresenta aproximadamente 20 a 22 milhões de MAU segundo estimativas. Há relatos de insultos raciais e sexuais, especialmente no chat de voz, mas sem estatísticas públicas confiáveis.",
-    players: "~20–22 milhões de MAU; ~170M cadastros até 2024",
+      "Apex apresenta aproximadamente 20 a 22 milhões de Usuários Mensais, segundo estimativas. Há relatos de insultos raciais e sexuais, especialmente no chat de voz, mas sem estatísticas públicas confiáveis.",
+    players:
+      "~20–22 milhões de Usuários Mensais; ~170 milhões de cadastros até 2024",
     prejudice: "Insultos raciais e sexuais, especialmente em voz",
     stats:
       "Não há estatísticas públicas confiáveis que quantifiquem racismo ou preconceito em Apex.",
@@ -135,10 +140,10 @@ export const games: GameData[] = [
     category: "FPS cooperativo",
     year: "2026",
     technology: "Unreal Engine",
-    status: "8,5M MAU",
+    status: "8,5 milhões de Usuários Mensais",
     description:
-      "Overwatch 2 tem aproximadamente 8,5 a 8,6 milhões de MAU em 2026. Há registros de racismo, assédio e hate raids direcionados a streamers negros, sem dados públicos detalhados.",
-    players: "~8,5–8,6 milhões de MAU",
+      "Overwatch 2 tem aproximadamente 8,5 a 8,6 milhões de Usuários Mensais em 2026. Há registros de racismo, assédio e ataques direcionados a streamers negros, sem dados públicos detalhados.",
+    players: "~8,5–8,6 milhões de Usuários Mensais",
     prejudice: "Racismo, assédio e ataques direcionados a streamers negros",
     stats:
       "Ocorreram campanhas de assédio e hate raids contra streamers negros associados ao jogo.",
@@ -151,10 +156,11 @@ export const games: GameData[] = [
     category: "Battle Royale",
     year: "2026",
     technology: "Unity",
-    status: "~130M MAU",
+    status: "~130 milhões de Usuários Mensais",
     description:
-      "Free Fire alcançou cerca de 130 milhões de MAU em 2026, com mais de 100 milhões de DAU no Q2 de 2025. Há principalmente relatos de racismo, machismo e assédio, além de um caso explícito de ofensa racial.",
-    players: "~130 milhões de MAU; >100M DAU no Q2/2025",
+      "Free Fire alcançou cerca de 130 milhões de Usuários Mensais em 2026, com mais de 100 milhões de Usuários diários no segundo trimestre de 2025. Há principalmente relatos de racismo, machismo e assédio, além de um caso explícito de ofensa racial.",
+    players:
+      "~130 milhões de Usuários Mensais; mais de 100 milhões de Usuários diários no 2º Trimestre/2025",
     prejudice: "Racismo, machismo e assédio",
     stats:
       "Um jogador brasileiro da LOUD foi alvo de ofensa racial envolvendo o termo “macaco”.",
@@ -167,10 +173,10 @@ export const games: GameData[] = [
     category: "Battle Royale",
     year: "2026",
     technology: "Unreal Engine",
-    status: "110–150M MAU",
+    status: "110–150 milhões de Usuários Mensais",
     description:
-      "PUBG Mobile estima 110 a 150 milhões de MAU em 2026. Foram documentados casos de racismo e xenofobia no cenário competitivo, com banimentos relevantes em transmissões.",
-    players: "~110–150 milhões de MAU",
+      "PUBG Mobile estima 110 a 150 milhões de Usuários Mensais em 2026. Foram documentados casos de racismo e xenofobia no cenário competitivo, com banimentos relevantes em transmissões.",
+    players: "~110–150 milhões de Usuários Mensais",
     prejudice: "Racismo e xenofobia, especialmente em esports",
     stats:
       "O jogador profissional brasileiro NTX recebeu banimento de um ano após linguagem racialmente ofensiva.",
@@ -183,10 +189,11 @@ export const games: GameData[] = [
     category: "FPS battle royale",
     year: "2026",
     technology: "IW Engine",
-    status: "30–50M MAU",
+    status: "30–50 milhões de Usuários Mensais",
     description:
-      "Warzone tem cerca de 30 a 50 milhões de MAU em 2026. Há registros de racismo, sexismo e discurso de ódio, com a Activision relatando 350 mil contas banidas por toxicidade e nomes ofensivos.",
-    players: "~30–50 milhões de MAU; ~44 mil simultâneos no Steam",
+      "Warzone tem cerca de 30 a 50 milhões de Usuários Mensais em 2026. Há registros de racismo, sexismo e discurso de ódio, com a Activision relatando 350 mil contas banidas por toxicidade e nomes ofensivos.",
+    players:
+      "~30–50 milhões de Usuários Mensais; ~44 mil jogadores simultâneos no Steam",
     prejudice: "Racismo, sexismo e discurso de ódio",
     stats:
       "A Activision informou banimento de 350 mil contas em um ano por nomes racistas ou comportamento tóxico.",
@@ -199,10 +206,10 @@ export const games: GameData[] = [
     category: "MOBA",
     year: "2026",
     technology: "Unity",
-    status: "40,8M MAU",
+    status: "40,8 milhões de Usuários Mensais",
     description:
-      "O jogo tem aproximadamente 40,8 milhões de MAU em 2026. Há relatos informais de sexismo, racismo e assédio verbal, mas dados públicos confiáveis sobre a extensão do problema são insuficientes.",
-    players: "~40,8 milhões de MAU",
+      "O jogo tem aproximadamente 40,8 milhões de Usuários Mensais em 2026. Há relatos informais de sexismo, racismo e assédio verbal, mas dados públicos confiáveis sobre a extensão do problema são insuficientes.",
+    players: "~40,8 milhões de Usuários Mensais",
     prejudice: "Sexismo, racismo e assédio verbal",
     stats:
       "Não foram encontradas pesquisas ou estatísticas públicas confiáveis que quantifiquem esses casos.",
@@ -220,8 +227,23 @@ const HEX_CLIP =
 
 const rows = [games.slice(0, 4), games.slice(4, 8), games.slice(8, 12)];
 
+export const gameImages: Record<string, string> = {
+  Roblox: "/roblox.png",
+  Fortnite: "/fortnite.webp",
+  Minecraft: "/minecraft.jpg",
+  CS2: "/cs2.jpg",
+  "League of Legends": "/LeagueOfLegends.webp",
+  Valorant: "/valorant.jpg",
+  "Apex Legends": "/apexlegends.jpg",
+  "Overwatch 2": "/Overwatch-2.webp",
+  "Free Fire": "/freefire.jpg",
+  "PUBG Mobile": "/pubg-mobile.jpg",
+  Warzone: "/warzone.webp",
+  "Mobile Legends": "/mobile-legends.webp",
+};
+
 type SelectorProps = {
-  selectedGame: GameData;
+  selectedGame?: GameData;
   onSelectGame: (game: GameData) => void;
 };
 
@@ -257,7 +279,7 @@ const Selector = ({ selectedGame, onSelectGame }: SelectorProps) => {
         >
           {rows.flatMap((row, rowIndex) =>
             row.map((game, columnIndex) => {
-              const isSelected = selectedGame.name === game.name;
+              const isSelected = selectedGame?.name === game.name;
 
               return (
                 <button
@@ -299,7 +321,14 @@ const Selector = ({ selectedGame, onSelectGame }: SelectorProps) => {
                         ? "ring-2 ring-white/80 ring-offset-2 ring-offset-[#101214]"
                         : ""
                     }`}
-                    style={{ clipPath: HEX_CLIP }}
+                    style={{
+                      clipPath: HEX_CLIP,
+                      backgroundImage: gameImages[game.name]
+                        ? `url("${gameImages[game.name]}")`
+                        : undefined,
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                    }}
                   />
                 </button>
               );
