@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Raleway, Inter } from "next/font/google";
 import "./globals.css";
-
+import { Analytics } from "@vercel/analytics/next";
 const raleway = Raleway({
   variable: "--font-raleway",
   subsets: ["latin"],
@@ -28,6 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="pt-BR"
       className={`${raleway.variable} ${jetBrainsMono.variable} ${inter.variable} h-full antialiased`}
     >
+      <Analytics />
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
