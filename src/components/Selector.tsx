@@ -274,7 +274,7 @@ export const gameImages: Record<string, string> = {
 
 type SelectorProps = {
   selectedGame?: GameData;
-  onSelectGame: (game: GameData) => void;
+  onSelectGame: (game?: GameData) => void;
 };
 
 const Selector = ({ selectedGame, onSelectGame }: SelectorProps) => {
@@ -337,7 +337,13 @@ const Selector = ({ selectedGame, onSelectGame }: SelectorProps) => {
         </p>
       </div>
 
-      <div className="mt-6 flex flex-1 items-center justify-center overflow-hidden py-2">
+      <div
+        className="mt-6 flex flex-1 items-center justify-center overflow-hidden py-2"
+        onClick={() => {
+          onSelectGame(undefined);
+          setTooltip(null);
+        }}
+      >
         <div
           className="selector-hex-grid grid "
           style={{
@@ -356,7 +362,7 @@ const Selector = ({ selectedGame, onSelectGame }: SelectorProps) => {
                   key={`${rowIndex}-${game.name}`}
                   type="button"
                   className={`group relative flex cursor-pointer items-center justify-center transition-all duration-200 hover:-translate-y-1 ${
-                    isSelected ? "scale-[1.04]" : ""
+                    isSelected ? "scale-[1.1] z-10" : ""
                   }`}
                   style={{
                     width: hexWidth,
@@ -371,7 +377,10 @@ const Selector = ({ selectedGame, onSelectGame }: SelectorProps) => {
                   }}
                   aria-label={game.name}
                   aria-pressed={isSelected}
-                  onClick={() => onSelectGame(game)}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    onSelectGame(game);
+                  }}
                   onMouseEnter={(event) => {
                     setTooltip({
                       name: game.name,
@@ -401,6 +410,9 @@ const Selector = ({ selectedGame, onSelectGame }: SelectorProps) => {
                         : undefined,
                       backgroundPosition: "center",
                       backgroundSize: "cover",
+                      filter: isSelected
+                        ? "none"
+                        : "grayscale(1) brightness(0.35) saturate(0.2)",
                     }}
                   />
                 </button>
