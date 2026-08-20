@@ -294,11 +294,34 @@ const Selector = ({ selectedGame, onSelectGame }: SelectorProps) => {
     return () => window.removeEventListener("resize", updateViewportWidth);
   }, []);
 
-  const hexSize = viewportWidth <= 390 ? 32 : viewportWidth <= 480 ? 40 : viewportWidth <= 640 ? 48 : viewportWidth <= 640 ? 60 : 72;
+  const hexSize =
+    viewportWidth <= 390
+      ? 32
+      : viewportWidth <= 480
+        ? 40
+        : viewportWidth <= 640
+          ? 48
+          : viewportWidth <= 640
+            ? 60
+            : 72;
   const hexWidth = hexSize * 1.732;
   const hexHeight = hexSize * 2;
-  const rowOffset = viewportWidth <= 480 ? -25 : viewportWidth <= 640 ? -42 : viewportWidth <= 520 ? -32 : -56.5;
-  const baseOffset =viewportWidth <= 390 ? 7 : viewportWidth <= 480 ? 14 : viewportWidth <= 640 ? 9 : 10;
+  const rowOffset =
+    viewportWidth <= 480
+      ? -25
+      : viewportWidth <= 640
+        ? -42
+        : viewportWidth <= 520
+          ? -32
+          : -56.5;
+  const baseOffset =
+    viewportWidth <= 390
+      ? 7
+      : viewportWidth <= 480
+        ? 14
+        : viewportWidth <= 640
+          ? 9
+          : 10;
 
   return (
     <div className="flex h-full min-h-0 flex-1 flex-col bg-[#101214] px-4 py-4">
@@ -338,14 +361,16 @@ const Selector = ({ selectedGame, onSelectGame }: SelectorProps) => {
                   style={{
                     width: hexWidth,
                     height: hexHeight,
-                     marginLeft:
-                       rowIndex % 2 === 1 ? `${rowOffset}px` : `${baseOffset}px`,
+                    marginLeft:
+                      rowIndex % 2 === 1 ? `${rowOffset}px` : `${baseOffset}px`,
                     marginTop: rowIndex > 0 ? `${hexSize * -0.4}px` : "0px",
                     clipPath: HEX_CLIP,
+
                     gridColumn: columnIndex + 1,
                     gridRow: rowIndex + 1,
                   }}
                   aria-label={game.name}
+                  aria-pressed={isSelected}
                   onClick={() => onSelectGame(game)}
                   onMouseEnter={(event) => {
                     setTooltip({
@@ -384,7 +409,7 @@ const Selector = ({ selectedGame, onSelectGame }: SelectorProps) => {
           )}
         </div>
 
-        {tooltip && (
+        {tooltip && viewportWidth > 1024 && (
           <div
             className="pointer-events-none fixed z-9999 whitespace-nowrap rounded-md border border-white/10 bg-[#171a1d]/95 px-2.5 py-1 text-[10px] font-medium text-white/80 shadow-lg"
             style={{
