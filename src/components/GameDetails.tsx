@@ -36,7 +36,7 @@ const GameDetails = () => {
             Mostra Científica 2026
           </h1>
           <h2 className="truncate text-[11px] text-white/50">
-           Dados sobre preconceitos nos Jogos Digitais
+            Dados sobre preconceitos nos Jogos Digitais
           </h2>
         </div>
       </div>
