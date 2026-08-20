@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export type GameData = {
   name: string;
@@ -11,6 +11,8 @@ export type GameData = {
   status: string;
   description: string;
   players: string;
+  dailyActivity: string;
+  simultaneousPeak: string;
   prejudice: string;
   stats: string;
   observations: string;
@@ -28,6 +30,10 @@ export const games: GameData[] = [
       "O Roblox registrou cerca de 380,1 milhões de Usuários Mensais em 2025 e também 144 milhões de Usuários diários no quarto trimestre. Foram documentados casos de racismo, antissemitismo e discurso de ódio em experiências da plataforma.",
     players:
       "~380,1 milhões de Usuários Mensais; ~144 milhões de Usuários diários no 4º Trimestre/2025",
+    dailyActivity:
+      "80–100 milhões de jogadores ativos diariamente em 2025–2026",
+    simultaneousPeak:
+      "20–30 milhões de jogadores simultâneos (estimativa global)",
     prejudice: "Racismo, antissemitismo e discurso de ódio",
     stats:
       "A CBS encontrou dezenas de suásticas e insultos raciais/antissemitas em Spray Paint!",
@@ -45,6 +51,9 @@ export const games: GameData[] = [
       "A Epic chegou a aproximadamente 110 milhões de Usuários Mensais em 2025, com picos de jogadores simultâneos em 2026. Há registros de racismo, homofobia e linguagem discriminatória em comunidades e transmissões.",
     players:
       "~110 milhões de Usuários Mensais; ~575 mil jogadores simultâneos em 2026",
+    dailyActivity: "900 mil–1,3 milhão de jogadores por dia (média estimada)",
+    simultaneousPeak:
+      "9,75 milhões de jogadores simultâneos em novembro de 2025",
     prejudice: "Racismo, homofobia e discriminação em geral",
     stats:
       "FaZe Dubs foi afastado após uso de termo racial pejorativo; criador foi suspenso por comentário homofóbico.",
@@ -61,6 +70,8 @@ export const games: GameData[] = [
     description:
       "O jogo atingiu cerca de 212 milhões de Usuários Mensais em 2025. Estudos apontaram racismo, supremacia branca, sexismo e linguagem ofensiva em chats públicos de servidores Java.",
     players: "~212 milhões de Usuários Mensais",
+    dailyActivity: "Aproximadamente 32 milhões de jogadores ativos diariamente",
+    simultaneousPeak: "~2,8 milhões de jogadores simultâneos (estimativa)",
     prejudice:
       "Racismo, supremacia branca, sexismo e linguagem sexual/ofensiva",
     stats:
@@ -79,6 +90,9 @@ export const games: GameData[] = [
       "Counter-Strike 2 registrou cerca de 1,17 milhão de jogadores simultâneos em fevereiro de 2026. A comunidade tem histórico de racismo, homofobia, xenofobia e sexismo, especialmente em chats.",
     players:
       "~1,17 milhão de jogadores simultâneos; pico histórico de ~1,86 milhão",
+    dailyActivity:
+      "Centenas de milhares a mais de 1 milhão simultâneos no Steam (média)",
+    simultaneousPeak: "1,86 milhão de jogadores simultâneos em abril de 2025",
     prejudice: "Racismo, homofobia, xenofobia e sexismo",
     stats:
       "O jogador profissional BOROS foi banido após insultos raciais contra um jogador chinês.",
@@ -95,6 +109,9 @@ export const games: GameData[] = [
     description:
       "O jogo é estimado em cerca de 150 milhões de Usuários Mensais. Há registros de racismo, sexismo, homofobia e assédio, com estudos apontando que cerca de 36% dos jogadores relatam assédio frequente.",
     players: "~150 milhões de Usuários Mensais (estimativa)",
+    dailyActivity:
+      "Aproximadamente 25–40 milhões de jogadores ativos diariamente",
+    simultaneousPeak: "1–1,2 milhão de jogadores simultâneos (estimativa)",
     prejudice: "Racismo, sexismo, homofobia e assédio",
     stats: "Aproximadamente 36% dos jogadores relatam assédio frequente.",
     observations:
@@ -111,6 +128,8 @@ export const games: GameData[] = [
       "A Riot estimou mais de 35 milhões de jogadores mensais em 2024; em 2026, o jogo ficou na faixa de 18 a 21 milhões de Usuários Mensais. Há casos documentados de racismo, homofobia e sexismo.",
     players:
       "~18–21 milhões de Usuários Mensais em 2026; mais de 35 milhões em 2024",
+    dailyActivity: "Aproximadamente 5 milhões de jogadores rastreados por dia",
+    simultaneousPeak: "Picos da base rastreada chegaram a ~6,86 milhões",
     prejudice: "Racismo, homofobia e sexismo",
     stats:
       "Jogadores e streamers foram punidos por termos racistas e comentários discriminatórios.",
@@ -128,6 +147,8 @@ export const games: GameData[] = [
       "Apex apresenta aproximadamente 20 a 22 milhões de Usuários Mensais, segundo estimativas. Há relatos de insultos raciais e sexuais, especialmente no chat de voz, mas sem estatísticas públicas confiáveis.",
     players:
       "~20–22 milhões de Usuários Mensais; ~170 milhões de cadastros até 2024",
+    dailyActivity: "70–140 mil jogadores simultâneos em média no Steam em 2025",
+    simultaneousPeak: "~325 mil jogadores simultâneos no Steam em 2026",
     prejudice: "Insultos raciais e sexuais, especialmente em voz",
     stats:
       "Não há estatísticas públicas confiáveis que quantifiquem racismo ou preconceito em Apex.",
@@ -144,6 +165,8 @@ export const games: GameData[] = [
     description:
       "Overwatch 2 tem aproximadamente 8,5 a 8,6 milhões de Usuários Mensais em 2026. Há registros de racismo, assédio e ataques direcionados a streamers negros, sem dados públicos detalhados.",
     players: "~8,5–8,6 milhões de Usuários Mensais",
+    dailyActivity: "20–70 mil jogadores simultâneos em média no Steam",
+    simultaneousPeak: "~165 mil jogadores simultâneos em fevereiro de 2026",
     prejudice: "Racismo, assédio e ataques direcionados a streamers negros",
     stats:
       "Ocorreram campanhas de assédio e hate raids contra streamers negros associados ao jogo.",
@@ -161,6 +184,9 @@ export const games: GameData[] = [
       "Free Fire alcançou cerca de 130 milhões de Usuários Mensais em 2026, com mais de 100 milhões de Usuários diários no segundo trimestre de 2025. Há principalmente relatos de racismo, machismo e assédio, além de um caso explícito de ofensa racial.",
     players:
       "~130 milhões de Usuários Mensais; mais de 100 milhões de Usuários diários no 2º Trimestre/2025",
+    dailyActivity:
+      "15–25 milhões de jogadores ativos diariamente em algumas plataformas",
+    simultaneousPeak: "Não há pico simultâneo global confiável",
     prejudice: "Racismo, machismo e assédio",
     stats:
       "Um jogador brasileiro da LOUD foi alvo de ofensa racial envolvendo o termo “macaco”.",
@@ -177,6 +203,8 @@ export const games: GameData[] = [
     description:
       "PUBG Mobile estima 110 a 150 milhões de Usuários Mensais em 2026. Foram documentados casos de racismo e xenofobia no cenário competitivo, com banimentos relevantes em transmissões.",
     players: "~110–150 milhões de Usuários Mensais",
+    dailyActivity: "Dezenas de milhões de jogadores ativos",
+    simultaneousPeak: "Não há pico simultâneo global confiável",
     prejudice: "Racismo e xenofobia, especialmente em esports",
     stats:
       "O jogador profissional brasileiro NTX recebeu banimento de um ano após linguagem racialmente ofensiva.",
@@ -194,6 +222,9 @@ export const games: GameData[] = [
       "Warzone tem cerca de 30 a 50 milhões de Usuários Mensais em 2026. Há registros de racismo, sexismo e discurso de ódio, com a Activision relatando 350 mil contas banidas por toxicidade e nomes ofensivos.",
     players:
       "~30–50 milhões de Usuários Mensais; ~44 mil jogadores simultâneos no Steam",
+    dailyActivity: "Não há média diária global confiável",
+    simultaneousPeak:
+      "Não há pico simultâneo global confiável entre as plataformas",
     prejudice: "Racismo, sexismo e discurso de ódio",
     stats:
       "A Activision informou banimento de 350 mil contas em um ano por nomes racistas ou comportamento tóxico.",
@@ -210,6 +241,9 @@ export const games: GameData[] = [
     description:
       "O jogo tem aproximadamente 40,8 milhões de Usuários Mensais em 2026. Há relatos informais de sexismo, racismo e assédio verbal, mas dados públicos confiáveis sobre a extensão do problema são insuficientes.",
     players: "~40,8 milhões de Usuários Mensais",
+    dailyActivity:
+      "~40–55 milhões de jogadores mensais estimados em determinados períodos",
+    simultaneousPeak: "Não há pico simultâneo global confiável",
     prejudice: "Sexismo, racismo e assédio verbal",
     stats:
       "Não foram encontradas pesquisas ou estatísticas públicas confiáveis que quantifiquem esses casos.",
@@ -218,10 +252,6 @@ export const games: GameData[] = [
   },
 ];
 
-const HEX_SIZE = 50;
-const HEX_WIDTH = HEX_SIZE * 1.732;
-const HEX_HEIGHT = HEX_SIZE * 2;
-const ROW_OFFSET = HEX_WIDTH / 2;
 const HEX_CLIP =
   "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)";
 
@@ -248,11 +278,27 @@ type SelectorProps = {
 };
 
 const Selector = ({ selectedGame, onSelectGame }: SelectorProps) => {
+  const [viewportWidth, setViewportWidth] = useState(1024);
   const [tooltip, setTooltip] = useState<{
     name: string;
     x: number;
     y: number;
   } | null>(null);
+
+  useEffect(() => {
+    const updateViewportWidth = () => setViewportWidth(window.innerWidth);
+
+    updateViewportWidth();
+    window.addEventListener("resize", updateViewportWidth);
+
+    return () => window.removeEventListener("resize", updateViewportWidth);
+  }, []);
+
+  const hexSize = viewportWidth <= 390 ? 32 : viewportWidth <= 480 ? 40 : viewportWidth <= 640 ? 48 : viewportWidth <= 640 ? 60 : 72;
+  const hexWidth = hexSize * 1.732;
+  const hexHeight = hexSize * 2;
+  const rowOffset = viewportWidth <= 480 ? -25 : viewportWidth <= 640 ? -42 : viewportWidth <= 520 ? -32 : -56.5;
+  const baseOffset =viewportWidth <= 390 ? 7 : viewportWidth <= 480 ? 14 : viewportWidth <= 640 ? 9 : 10;
 
   return (
     <div className="flex h-full min-h-0 flex-1 flex-col bg-[#101214] px-4 py-4">
@@ -270,11 +316,12 @@ const Selector = ({ selectedGame, onSelectGame }: SelectorProps) => {
 
       <div className="mt-6 flex flex-1 items-center justify-center overflow-hidden py-2">
         <div
-          className="grid"
+          className="selector-hex-grid grid "
           style={{
-            gridTemplateColumns: `repeat(${Math.max(...rows.map((row) => row.length))}, ${HEX_WIDTH}px)`,
-            columnGap: "4px",
-            rowGap: "0px",
+            gridTemplateColumns: `repeat(${Math.max(...rows.map((row) => row.length))}, ${hexWidth}px)`,
+            columnGap: "10px",
+            rowGap: "5px",
+            paddingLeft: hexWidth / 4,
           }}
         >
           {rows.flatMap((row, rowIndex) =>
@@ -289,10 +336,11 @@ const Selector = ({ selectedGame, onSelectGame }: SelectorProps) => {
                     isSelected ? "scale-[1.04]" : ""
                   }`}
                   style={{
-                    width: `${HEX_WIDTH}px`,
-                    height: `${HEX_HEIGHT}px`,
-                    marginLeft: rowIndex % 2 === 1 ? `${ROW_OFFSET}px` : "-2px",
-                    marginTop: rowIndex > 0 ? "-20px" : "0px",
+                    width: hexWidth,
+                    height: hexHeight,
+                     marginLeft:
+                       rowIndex % 2 === 1 ? `${rowOffset}px` : `${baseOffset}px`,
+                    marginTop: rowIndex > 0 ? `${hexSize * -0.4}px` : "0px",
                     clipPath: HEX_CLIP,
                     gridColumn: columnIndex + 1,
                     gridRow: rowIndex + 1,

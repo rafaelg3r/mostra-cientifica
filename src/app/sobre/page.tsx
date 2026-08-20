@@ -2,7 +2,7 @@ import GameDetails from "@/components/GameDetails";
 
 export default function SobrePage() {
   return (
-    <div className="flex h-dvh">
+    <div className="flex h-dvh flex-col">
       <GameDetails />
       <main className="flex flex-1 items-center justify-center bg-[#101214] p-8 text-white">
         <div className="max-w-xl rounded-lg border border-marine-800 bg-[#1A1C20] p-8">
